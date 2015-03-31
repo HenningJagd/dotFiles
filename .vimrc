@@ -3,6 +3,11 @@ let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
 
+highlight Normal guifg=gray guibg=black
+
+command Q q
+command W w
+
 set background=dark
 " An example for a vimrc file.
 "
