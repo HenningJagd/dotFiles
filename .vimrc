@@ -6,7 +6,7 @@ let &t_te.="\e[0 q"
 if has('gui_running')
 	highlight Normal guifg=gray guibg=black
 else
-	if &term == 'xterm'
+	if &term == 'xterm' || &term == 'xterm-256color'
 		set t_Co=256
 	endif
 endif
