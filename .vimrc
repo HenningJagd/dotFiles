@@ -14,7 +14,10 @@ endif
 command Q q
 command W w
 
+colorscheme molokai
+
 set background=dark
+set nu
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
