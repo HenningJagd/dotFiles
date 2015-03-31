@@ -103,3 +103,4 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 alias tmux="tmux -2"
+alias la="ls -A"
