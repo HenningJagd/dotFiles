@@ -97,10 +97,18 @@ command Q q
 command W w
 
 colorscheme molokai
-hi ModeMsg ctermbg=166
 
 set background=dark
 set nu
 
+autocmd InsertEnter * highlight ModeMsg ctermbg=166
+autocmd InsertLeave * highlight ModeMsg ctermbg=000
+
 let Tlist_GainFocus_On_ToggleOpen = 1 
 nnoremap <F2> :TlistToggle<CR>
+set wildmenu
+set wildignore=*~,*.pyc
+set ignorecase
+set smartcase
+set encoding=utf8
+map 0 ^
