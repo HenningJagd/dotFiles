@@ -1,42 +1,10 @@
-let &t_ti.="\e[1 q"
-let &t_SI.="\e[5 q"
-let &t_EI.="\e[1 q"
-let &t_te.="\e[0 q"
-
-if has('gui_running')
-	highlight Normal guifg=gray guibg=black
-else
-	if &term == 'xterm' || &term == 'xterm-256color'
-		set t_Co=256
-	endif
-endif
-
-command Q q
-command W w
-
-colorscheme molokai
-
-set background=dark
-set nu
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2011 Apr 15
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
-set nocompatible
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+filetype plugin indent on    " required
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -53,9 +21,6 @@ set incsearch		" do incremental searching
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -114,3 +79,28 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
+
+if has('gui_running')
+	highlight Normal guifg=gray guibg=black
+else
+	if &term == 'xterm' || &term == 'xterm-256color'
+		set t_Co=256
+	endif
+endif
+
+command Q q
+command W w
+
+colorscheme molokai
+hi ModeMsg ctermbg=166
+
+set background=dark
+set nu
+
+let Tlist_GainFocus_On_ToggleOpen = 1 
+nnoremap <F2> :TlistToggle<CR>
